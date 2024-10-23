@@ -1,0 +1,65 @@
+html{
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #ccc;
+    font-size: 22px;
+    font-family: sans-serif;
+}
+
+.topmenu{
+    display: flex;
+    background-color: #24a46a;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+    padding: 15px 30px;
+    display: inline-block;
+}
+
+.submenu{
+    min-width: 200px;
+    position: absolute;
+    z-index: 5;
+    transform-origin: 0 0;
+    transform: rotateX(-90deg);
+    transition: .3s linear;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.submenu li{
+    position: relative;
+}
+
+.submenu .submenu{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transition: .3s linear;
+}
+
+.topmenu li:hover > .submenu{
+    opacity: 1;
+    visibility: visible;
+    transform: rotateX(0);
+}
+
+.submenu a{
+    border-bottom: 1px solid #000;
+    padding: 10px 20px;
+    background-color: #1883a1;
+    font-size: 16px;
+    display: block; 
+}
